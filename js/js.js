@@ -1,6 +1,6 @@
 var xhttp = new XMLHttpRequest();
 
-var url = "https://rawgit.com/MariaAdrover/LM_PRACTICA5/master/formulari.xml";
+var url = "https://rawgit.com/MariaAdrover/LM_PRACTICA5/master/xml/formulari.xml";
 var urlJavi = 'https://rawgit.com/shamshir/Prueba/master/questions.xml';
 
 var xmlDoc = null;
@@ -242,7 +242,7 @@ function corregirText(i) {
 	if (i == 0) {
 	
 		if (valor.toUpperCase() == ok0[0].toUpperCase()) {
-			nota += 1;
+			nota++;
 		}	
 		
 	} else {
