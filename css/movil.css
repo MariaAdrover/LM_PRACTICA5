@@ -214,30 +214,6 @@ select {
 	font-size: 0.8em;
 	color: white;
 }
-/*
-#infoMarco{
-	z-index: 1;
-	display: block;
-	position: absolute;
-	top: 30%;
-	left: 10%;
-	width: 80%;	
-	height: 100%;
-	padding: 2%;
-	background: url(../img/cuadros.png) repeat  center;
-	background-color: white;
-	outline-style: solid;
-	outline-color: #333333;
-	outline-width: 2px;
-}
-
-#info {
-	background-color: white;
-	padding: 2%;
-	outline-style: solid;
-	outline-color: #333333;
-	outline-width: 2px;
-}*/
 
 #start {
 	z-index: 4;
@@ -261,4 +237,12 @@ select {
 #start img {
 	max-height: 100%;
 	max-width:20%;
+}
+
+#crono {
+	display:none;
+}
+
+#nota {
+	display: none;
 }
