@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="formulari2.xsd">
+	<question>
+		<type>text</type>
+		<title>1. ¿Puedes conducir motos de 125cc con el carnet tipo B?</title>
+		<answer>si</answer> 
+	</question>
+	<question>
+		<type>text</type>
+		<title>2. En Alabama, ¿está permitido circular en dirección contraria si el vehículo tiene adherida una linterna iluminando la calzada? Contesta si o no.</title>
+		<answer>si</answer>
+	</question>
+	<question>
+		<type>select</type>
+		<title>3. A partir de esta señal, circular como mínimo a 30 km/h...</title>
+		<option>... es recomendable.</option>
+		<option>... está prohibido.</option>
+		<option>... es obligatorio.</option>
+		<option>¿Hay radares?</option>
+		<option>¿Qué señal?</option>
+		<answer>3</answer> 
+	</question>
+	<question>
+		<type>select</type>
+		<title>4. ¿Sabrías circular correctamente por esta rotonda? Indica cual de las siguientes respuestas es falsa:</title>
+		<option>Por supuesto, sin problema</option>
+		<option>Mayormente creo que no.</option> 
+		<option>No mucho.</option> 
+		<option>...</option>
+		<answer>1</answer>
+	</question>
+	<question>
+		<type>multiple</type>
+		<title>5. Señala las verdaderas:</title>
+		<option>En Francia es obligatorio llevar un alcoholímetro en el coche.</option>
+		<option>En Georgia (EEUU) es ilegal escupir desde un automóvil en movimiento.</option> 
+		<option>En Georgia (EEUU) es ilegal escupir desde un camión en movimiento.</option>
+		<answer>0</answer>
+		<answer>1</answer>
+	</question>
+	<question>
+		<type>multiple</type>
+		<title>6. Señala las verdaderas:</title>
+		<option>En Kentucky, está prohibido que las mujeres conduzcan en bañador en cualquier caso.</option>
+		<option>En Kentucky, las mujeres pueden conducir en bañador siempre y cuando lleven consigo un objeto de defensa personal o viajen acompañadas de dos policías.</option> 
+		<option>En Rusia puedes ser multado por llevar el vehículo sucio.</option>
+		<answer>1</answer>
+		<answer>2</answer>
+	</question>
+	<question>
+		<type>checkbox</type>
+		<title>7. En Alemania... (señala las verdaderas)</title>
+		<option>  ... es obligatorio llevar ropa y zapatos para conducir.</option>
+		<option>  ... conducir sin ropa y zapatos no  supone una infracción.</option> 
+		<option>  ... no llevar zapatos para conducir supone una infracción.</option> 
+		<option>  ... en caso de accidente, si el conductor va descalzo, puede llegar a perder la cobertura de su póliza.</option>
+		<answer>1</answer>
+		<answer>3</answer>
+	</question>
+	<question>
+		<type>checkbox</type>
+		<title>8. Y en España te pueden multar por... (señala las verdaderas)</title>
+		<option>  ... conducir sin camiseta.</option>
+		<option>  ... conducir descalzo, con tacones o con chanclas.</option> 
+		<option>  ... conducir todo el tiempo por el carril izquierdo o el central estando libre el derecho.</option> 
+		<option>  ... apoyar el codo en la ventanilla.</option>
+		<option>  ... sacar el brazo por la ventanilla para saludar.</option>
+		<answer>0</answer>
+		<answer>1</answer>
+		<answer>2</answer>
+		<answer>4</answer>
+	</question>
+	<question>
+		<type>radio</type>
+		<title>9. ¿Cuál es la velocidad máxima a la que está permitido saltar de un coche en marcha en California?</title>
+		<option>  20 km/h</option>
+		<option>  50 km/h</option> 
+		<option>  100 km/h</option> 
+		<option>  Puedes saltar a la velocidad que quieras.</option>
+		<answer>2</answer>
+	</question>
+	<question>
+		<type>radio</type>
+		<title>10. En Minnesota (EEUU), puedes circular con tu gorila siempre y cuando...</title>
+		<option>  ... el gorila viaje en el asiento del copiloto.</option>
+		<option>  ... el gorila viaje en los asientos traseros.</option> 
+		<option>  No está permitido en ningún caso.</option> 
+		<option>  En cualquier caso, si el gorila tiene ya una edad avanzada.</option>
+		<answer>0</answer>
+	</question>
+</questions>
