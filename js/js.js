@@ -45,7 +45,7 @@ window.onload = function(){
 		}
 	};
 
-	xhttp.open("GET", urlJavi, true); //localhost no ha de funcionar
+	xhttp.open("GET", url, true); //localhost no ha de funcionar
 	xhttp.send();
 	
 	// Inicio el cronómetro	

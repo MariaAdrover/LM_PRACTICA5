@@ -283,7 +283,7 @@ select {
 }
 
 .fa-check:before {
-    content: "\f00c";
+    content: "\f00c"; /*Revisar si puedo quitarlo y si puedo quitar :before */
     color: mediumseagreen;
 }
 
