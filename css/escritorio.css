@@ -2,7 +2,7 @@ body,html{height:100%;padding:0px;margin:0px;}
 /*body{background:url(../img/cielo.jpeg) no-repeat fixed center;}*/
 
 body {
-	font-family: Arial;
+	font-family: Verdana;
 	font-size: 100%;
 	background: url(../img/señales2.jpg) repeat fixed left;
 }
@@ -20,7 +20,7 @@ body {
 	position: absolute;
 	display: inline-block;
 	top:1%;
-	left:1%;
+	left:4%;
 	width: 6%;
 }
 
@@ -34,7 +34,7 @@ body {
 	position: absolute;
 	display: inline-block;
 	top:1%;
-	left:9%;
+	left:12%;
 	width: 6%;
 }
 
@@ -45,18 +45,18 @@ body {
 }
 
 #logo {
-	z-index: 4;
 	position: absolute;
 	display: inline-block;
 	top:14%;
-	left:18%;
-	width:55%;
+	left:23%;
+	width:50%;
 	padding: 1%;
 	text-align: center;
 	font-size: 3.8vw;
 	border-style: solid;
 	border-color: black;
 	border-width: 4px;
+	border-radius: 10px;
 	background-color: white;
 	
 }
@@ -64,8 +64,8 @@ body {
 #img3 {
 	position: absolute;
 	display: inline-block;
-	top:1%;
-	right:1%;
+	top:1.5%;
+	right:-1.5%;
 	width: 22%;	
 }
 
@@ -80,7 +80,7 @@ body {
 }
 
 ul {
-	z-index:4;
+	z-index:2;
 	position: fixed;
 	top: 16%;
 	width: 100%;
@@ -103,7 +103,7 @@ li a {
 }
 
 li a:link {
-    color: white; 
+    color: mediumseagreen; 
     background-color: transparent; 
     text-decoration: none;
 }
@@ -120,11 +120,11 @@ li a:hover {
     text-decoration: none;
 }
 
-/*li a:active {
-    color: yellow;
-    background-color: red;
+li a:active {
+    color: lightblue;
+    background-color: transparent;
     text-decoration: none;
-}*/
+}
 
 #titulo {
 	text-align: center;
@@ -132,7 +132,7 @@ li a:hover {
 }
 
 form, #infoMarco {
-	z-index: 2;
+	z-index: 1;
 	display: block;
 	position: absolute;
 	top: 27%;
@@ -157,7 +157,7 @@ h1 {
 	text-align: center;
 }
 
-fieldset, #info {
+fieldset, #info, #titInfo, #comentariosNota {
 	margin: 4%;
 	margin-top: 3%;
 	margin-bottom: 3%;
@@ -220,21 +220,19 @@ select {
 
 #start {
 	z-index: 4;
-	display: block;
+	display: none;
 	position: fixed;
 	top: 35%;
 	left: 30%;
-	display: block;
 	height: 20%;
 	width: 40%;
 	font-size: 3em;
 	background-color: yellow;
 	border-style: solid;
 	border-color: #333333;
-	border-width: 2px;
+	border-width: 5px;
 	border-radius: 10px;
 	text-align: center;
-	display: none;
 }
 
 #start img {
@@ -243,23 +241,55 @@ select {
 }
 
 #crono {
-	display:none;
+	z-index: 5;
+	position: fixed;
+	top: 18%;
+	right: 41%;
+	width: 17%;
+	height: 12%;
+	background-color: white;
+	border-style: solid;
+	border-color: #333333;
+	border-width: 5px;
+	border-radius: 10px;
+	font-size: 3.5vw;
+	color: green;
+}
+
+#crono img {
+	height: 100%;
+	max-height: 90%;
+	padding: 2%;
+	margin-right: 2%;
+}
+
+#cronoN {
+	position: absolute;
+	top: 18%;
+	right: 2%;
 }
 
 #nota {
+	z-index: 1;
 	display: none;
+	position: absolute;
+	top: 27%;
+	left: 5%;
+	width: 85%;	
+	padding: 2%;
+	background: url(../img/cuadros.png) repeat  center;
+	background-color: white;
+	border-style: solid;
+	border-color: #333333;
+	border-width: 2px;
+	border-radius: 10px;
 }
 
-/*
-   background: url(../img/l.png) no-repeat right center;
-   background-size: contain;*/
-
-select multiple {
-   height: 4vw;
+#tit {
+	padding: 0.5%;
 }
 
-/*option {
-   background: url(../img/l.png) no-repeat right center;
-   background-size: contain;
-   height: 4vw;
-}*/
+.element:before {
+    content: "f00d";
+	color: red;
+}

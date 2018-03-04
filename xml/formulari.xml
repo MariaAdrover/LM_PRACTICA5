@@ -5,7 +5,7 @@
 <questions>
 	<question>
 		<type>text</type>
-		<title>1. ¿Puedes conducir motos de 125cc con el carnet tipo B?</title>
+		<title>1. ¿Puedes conducir motos de 125cc con el carnet tipo B? Contesta si o no.</title>
 		<answer>si</answer> 
 	</question>
 	<question>
