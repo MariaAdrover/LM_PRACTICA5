@@ -103,7 +103,7 @@ li a {
 }
 
 li a:link {
-    color: mediumseagreen; 
+    color: white; 
     background-color: transparent; 
     text-decoration: none;
 }
@@ -289,7 +289,12 @@ select {
 	padding: 0.5%;
 }
 
-.element:before {
-    content: "f00d";
-	color: red;
+.fa-check:before {
+    content: "\f00c";
+    color: mediumseagreen;
+}
+
+.fa-times:before {
+    content: "\f00c";
+    color: red;
 }

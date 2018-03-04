@@ -287,6 +287,16 @@ select {
 	border-radius: 10px;
 }
 
+.fa-check:before {
+    content: "\f00c";
+    color: mediumseagreen;
+}
+
+.fa-times:before {
+    content: "\f00c";
+    color: red;
+}
+
 /*input:focus {
   border: 2px solid #000;
   background: #edf5f8;
