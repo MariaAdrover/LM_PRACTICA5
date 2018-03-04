@@ -45,7 +45,7 @@ window.onload = function(){
 		}
 	};
 
-	xhttp.open("GET", url, true); //localhost no ha de funcionar
+	xhttp.open("GET", urlJavi, true); //localhost no ha de funcionar
 	xhttp.send();
 	
 	// Inicio el cronómetro	
@@ -64,10 +64,8 @@ window.onload = function(){
 	formElement.onsubmit = function() {
 		
 		if (comprobar()){
-			alert("test comprobado");// ***********************QUITAR**************^***************
 			clearInterval(crono);
 			corregir();
-			alert("test corregido");// ***********************QUITAR**************^***************
 			presentarNota();
 		}
 		
@@ -220,7 +218,7 @@ function actualizarCrono() {
 		min--;
 		seg = 59;
 		document.getElementById('cronoN').innerHTML = min + ':' + seg;		
-	} else if  (min == 0 && seg == 0) {
+	} else if  (min == 0 && seg == 0) { // Si se acaba el tiempo, acaba el examen
 		clearInterval(crono);
 		alert("Lo sentimos, se acabó el tiempo, ¡has sido muy lent@!");
 		presentarNota();
@@ -236,7 +234,6 @@ function comprobar() {
 	var j;
     var f=formElement;
     var contestado;
-	alert("funcion COMPROBAR"); // ******************************************QUITAR****************************
    
 	for (i = 0; i < preguntaHTML.length; i++) {
 		
@@ -324,7 +321,6 @@ function comprobar() {
 // 3. Las respuestas correctas en el caso de que las respuestas seleccionadas no fueran correctas
 
 function corregir() {
-	alert("funcion CORREGIR"); // ******************************************QUITAR****************************
 	
 	for (i = 0; i < preguntaHTML.length; i++) {
 		
@@ -345,7 +341,6 @@ function corregir() {
 // Respuesta correcta:
 // Respuesta incorrecta:
 function corregirText(i) {
-	alert("funcion CORREGIRtext"); // ******************************************QUITAR****************************
 	var valor = preguntaHTML[i].getElementsByTagName('input')[0].value;
 	
 	if (valor.toUpperCase() == (window['ok' + i][0].toUpperCase())) {
@@ -365,7 +360,6 @@ function corregirText(i) {
 // Respuesta correcta:
 // Respuesta incorrecta:
 function corregirSelect(i) {
-	alert("funcion CORREGIRselect"); // ******************************************QUITAR****************************
     var select = preguntaHTML[i].getElementsByTagName('select')[0];
 	var puntosMal = -(1/(select.options.length-1).toFixed(2));
 	
@@ -386,7 +380,6 @@ function corregirSelect(i) {
 // Respuesta correcta:
 // Respuesta incorrecta:
 function corregirMultiple(p) {
-	alert("funcion CORREGIRmultiple"); // ******************************************QUITAR****************************	
 	var sel = preguntaHTML[p].getElementsByTagName('select')[0]; 
 	var puntosBien =  1/((window['ok' + p]).length);
 	var mal;
@@ -434,7 +427,6 @@ function corregirMultiple(p) {
 // Respuesta correcta:
 // Respuesta incorrecta:
 function corregirCheckbox(p) {
-	alert("funcion CORREGIRcheckbox"); // ******************************************QUITAR****************************
 	var che;
 	var puntosBien =  1/((window['ok' + p]).length);
 	var i;
@@ -488,7 +480,6 @@ function corregirCheckbox(p) {
 // Respuesta correcta:
 // Respuesta incorrecta:
 function corregirRadio(p) {
-	alert("funcion CORREGIRradio"); // ******************************************QUITAR****************************	
 	var che;
 	var numero = parseInt(window['ok' + p][0]);
 	var i;
@@ -496,37 +487,27 @@ function corregirRadio(p) {
 	
 	if (p == 8) {
 		che = formElement.p8;
-	alert("1r if p = 8"); // ******************************************QUITAR****************************
 	} else {
-	alert("1r if p = 9"); // ******************************************QUITAR****************************
 		che = formElement.p9;
 	}
 	
 	for (i = 0; i < che.length; i++){
-	alert("bucle che.length = " + che.length); // ******************************************QUITAR****************************
 		
 		if (che[i].checked) {
-			alert("OPCION checkbox = " + (i+1) + "checkeada"); // ******************************************QUITAR****************************
 				
 			if (i == numero) {
-				alert("OPCION checkbox " + (i+1) + " esta en las respuesta. CORRECTA"); // ******************************************QUITAR****************************
 				nota += 1;
 				var z = true;
 				ponerBold("P " + (p+1), z);
 				darExplicacion("CORRECTA. Puntuación: 1");
 				
 			} else {
-				alert("OPCION checkbox " + (i+1) + " NO esta en las respuesta. INCORRECTA"); // ******************************************QUITAR****************************
 
 				nota = nota - (1/(che.length)); // RESPUESTA INCORRECTA quita 1 / el numero de opciones que haya
 				var z = false;
-				alert("paso 1. ha puesto la nota" + (1/(che.length))); //QUITAR****************************
 				ponerBold("P " + (p+1), z);
-				alert("paso 2. ha puesto la NEGRITA"); //QUITAR****************************
-				darExplicacion("INCORRECTA. Puntuación: -" + 1/(che.length).toFixed(2));
-				alert("paso 3. ha puesto la PUNTUACION" + 1/(che.length).toFixed(2)); //QUITAR****************************
+				darExplicacion("INCORRECTA. Puntuación: -" + (1/(che.length)).toFixed(2));
 				darExplicacion("Respuesta correcta: " + (numero + 1) + ". " + preguntaXML[p].getElementsByTagName("option")[numero].innerHTML);
-				alert("ha hecho el paso 4"); // QUITAR****************************
 			}
 		}
 	}	
@@ -578,7 +559,6 @@ function darExplicacion(r){
 
 // Mostrar las repuestas, puntuaciones de cada pregunta y la nota final
 function presentarNota() {
-	alert("funcion PRESENTARNOTA"); // ******************************************QUITAR****************************
 	formElement.style.display = 'none';
 	
 	if (nota < 0) {			

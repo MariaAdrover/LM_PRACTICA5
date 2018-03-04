@@ -134,7 +134,7 @@ li a:active {
 }
 
 form, #infoMarco {
-	z-index: 2;
+	z-index: 1;
 	display: block;
 	position: absolute;
 	top: 27%;
@@ -159,7 +159,7 @@ h1 {
 	text-align: center;
 }
 
-fieldset, #comentariosNota {
+fieldset, #info, #comentariosNota {
 	margin: 4%;
 	margin-top: 3%;
 	margin-bottom: 3%;
@@ -170,10 +170,6 @@ fieldset, #comentariosNota {
 	border-radius: 10px;
 	background-color: white;
 	max-width: 100%; 
-}
-
-#titInfo {
-	font-size: 2vw;
 }
 
 input[type = 'text']{
@@ -276,8 +272,7 @@ select {
 	position: absolute;
 	top: 27%;
 	left: 8%;
-	width: 80%;
-	height: 60%;	
+	width: 80%;	
 	padding: 2%;
 	background: url(../img/cuadros.png) repeat  center;
 	background-color: white;
