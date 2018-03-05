@@ -48,7 +48,7 @@ body {
 	z-index: 4;
 	position: absolute;
 	display: inline-block;
-	top:17%;
+	top:14%;
 	left:21.5%;
 	width:55%;
 	padding: 1%;
@@ -189,6 +189,9 @@ select {
 	overflow: auto;	
 	background-color: white;
 }
+option {
+	margin-bottom: 4%;
+}
 
 #p3 img {	
 	display:block;
@@ -251,7 +254,7 @@ select {
 	border-width: 5px;
 	border-radius: 10px;
 	font-size: 8vw;
-	color: green;
+	color: #229a65;
 }
 
 #crono img {
