@@ -2,7 +2,7 @@ body,html{height:100%;padding:0px;margin:0px;}
 /*body{background:url(../img/cielo.jpeg) no-repeat fixed;}*/
 
 body {
-	font-family: 'Varela Round', sans-serif;
+	font-family: 'Varela Round', Arial, sans-serif;
 	font-size: 100%;
 	background: url(../img/señales2.jpg) repeat fixed left;
 }
@@ -53,7 +53,7 @@ body {
 	width:55%;
 	padding: 1%;
 	text-align: center;
-	font-family: 'Ranchers', cursive;
+	font-family: 'Ranchers', Arial, cursive;
 	font-size: 6.5vw;
 	border-style: solid;
 	border-color: #333333;
@@ -172,7 +172,7 @@ fieldset, #info, #comentariosNota {
 input[type = 'text']{
 	width: 99%;
 	margin-bottom:3%;
-	font-family: 'Varela Round', sans-serif;
+	font-family: 'Varela Round', Arial, sans-serif;
 }
 
 input[type = 'checkbox']{  
@@ -184,11 +184,16 @@ input[type = 'radio']{
 }
 
 select {
-	font-family: 'Varela Round', sans-serif;
+	font-family: 'Varela Round', Arial, sans-serif;
 	width: 100%;
 	overflow: auto;	
 	background-color: white;
 }
+
+#mult {	
+    padding: 1% 1%;
+}
+
 option {
 	margin-bottom: 4%;
 }
