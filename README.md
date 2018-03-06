@@ -1,14 +1,14 @@
-# LM_PRACTICA5
+﻿# LM_PRACTICA5
 Repositorio creado para la práctica de formularios html, con lectura de datos desde un fichero xml (o json) y autocorrección a través de js.
  
-> * Enlace a la página de [INSTRUCCIONES](https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/instrucciones.html)
-> * Enlace a la página del [TEST](https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/about.html) 
+> * Enlace a la página de [INSTRUCCIONES](https://rawgit.com/MariaAdrover/LM_PRACTICA5/master/index.html)
+> * Enlace a la página del [TEST](https://rawgit.com/MariaAdrover/LM_PRACTICA5/master/formulari.html) 
 
-**VERSIÓN MINIMIFICADA**
+**VERSIÓN MINIMIFICADA** 
 
-> * Enlace al [Repositorio branch vMini](https://github.com/MariaAdrover/lunar-landing-javascript/tree/v0.7mini)
-> * Enlace a la página de [INSTRUCCIONES](https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7mini/instrucciones.html)
-> * Enlace a la página del [TEST](https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7mini/about.html)
+> * Enlace al [Repositorio branch vMini](https://rawgit.com/MariaAdrover/LM_PRACTICA5/master/formulari.html)  ACTUALIZAR
+> * Enlace a la página de [INSTRUCCIONES](https://rawgit.com/MariaAdrover/LM_PRACTICA5/master/index.html) ACTUALIZAR
+> * Enlace a la página del [TEST](https://rawgit.com/MariaAdrover/LM_PRACTICA5/master/formulari.html) ACTUALIZAR
 
 ## DESCRIPCIÓN
 El repositorio contiene dos ficheros html, uno con una breve presentación de la página e instrucciones para realizar el test (**index.html**), y otro con el código del formulario (**formulario.html**).
