@@ -1,12 +1,9 @@
 body,html{height:100%;padding:0px;margin:0px;}
-/*body{background:url(../img/cielo.jpeg) no-repeat fixed center;}*/
-
 body {
 	font-family: 'Varela Round', Arial, sans-serif;
 	font-size: 100%;
 	background: url(../img/señales2.jpg) repeat fixed left;
 }
-
 #cabecera {
 	z-index:3;
 	position: fixed;
@@ -15,7 +12,6 @@ body {
 	height: 16%;
 	background: url(../img/cuadros.png) repeat  center;
 }
-
 #img1 {
 	position: absolute;
 	display: inline-block;
@@ -23,13 +19,11 @@ body {
 	left:4%;
 	width: 6%;
 }
-
 #img1 img {
 	width:100%;
 	max-width: 100%;
 	max-height: 100%;
 }
-
 #img2 {
 	position: absolute;
 	display: inline-block;
@@ -37,13 +31,11 @@ body {
 	left:13%;
 	width: 6%;
 }
-
 #img2 img {
 	width:100%;
 	max-width: 100%;
 	max-height: 100%;
 }
-
 #logo {
 	position: absolute;
 	display: inline-block;
@@ -58,10 +50,8 @@ body {
 	border-color: #333333;
 	border-width: 4px;
 	border-radius: 10px;
-	background-color: white;
-	
+	background-color: white;	
 }
-
 #img3 {
 	position: absolute;
 	display: inline-block;
@@ -69,17 +59,14 @@ body {
 	right:-1.5%;
 	width: 22%;	
 }
-
 #img3 img {
 	width:100%;
 	max-width: 100%;
 	float: right;
 }
-
 #menu {
 	text-align: center;
 }
-
 ul {
 	z-index:2;
 	position: fixed;
@@ -91,47 +78,38 @@ ul {
 	overflow: hidden;
 	background-color: #333333;
 }
-
 li {
 	float: left;
 }
-
 li a {
 	display: block;
 	padding: 16px;
 	text-align: center;
-	/*color: white;*/
 }
-
 li a:link {
     color: white; 
     background-color: transparent; 
     text-decoration: none;
 }
-
 li a:visited {
     color: white;
     background-color: transparent;
     text-decoration: none;
 }
-
 li a:hover {
     color: lightblue;
     background-color: #111111;
     text-decoration: none;
 }
-
 li a:active {
     color: lightblue;
     background-color: transparent;
     text-decoration: none;
 }
-
 #titulo {
 	text-align: center;
 	background-color: white;
 }
-
 form, #infoMarco {
 	z-index: 1;
 	display: block;
@@ -145,19 +123,15 @@ form, #infoMarco {
 	border-style: solid;
 	border-color: #333333;
 	border-width: 2px;
-	border-radius: 10px;
-	
+	border-radius: 10px;	
 }
-
 #video {
 	margin-top: 3%;
 	max-width:100%;
 }
-
 h1 {
 	text-align: center;
 }
-
 fieldset, #info, #comentariosNota {
 	margin: 4%;
 	margin-top: 3%;
@@ -170,21 +144,17 @@ fieldset, #info, #comentariosNota {
 	background-color: white;
 	max-width: 100%; 
 }
-
 input[type = 'text']{
 	width: 100%;	
 	font-family: 'Varela Round', Arial, sans-serif;
 	font-size: 1.2vw;
 }
-
 input[type = 'checkbox']{  
 	margin-top: 2%;
 }
-
 input[type = 'radio']{  
 	margin-top: 2%;
 }
-
 select {
 	font-family: 'Varela Round', Arial, sans-serif;
 	width: 100%;
@@ -192,58 +162,48 @@ select {
 	background-color: white;
 	font-size: 1.2vw;
 }
-
 #mult, #mult2 {	
     padding: 1% 1%;
 }
-
 option {
 	margin-bottom: 2%;
 	font-size: 1.2vw;
 }
-
 #p3 img {
 	width: 16%;
 	float: right;
 }
-
 #p4 img {
 	width: 50%;
 	float: right;
 }
-
 #p3 select {
 	width: 74%;
 }
-
 #p4 select {
 	width: 40%;
 }
-
 #submit {
 	text-align: center;
 	background-color: white;
 }
-
 #botonSubmit {
-    background-color: #229a65; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+        background-color: #229a65; /* Green */
+   	border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
 	border-style: solid;
-    font-size: 16px;
+        font-size: 16px;
 	border-radius: 10px;
 	border-color: #333333;
 	border-width: 2px;
 }
-
 #botonSubmit:hover {
 	background-color: #51cc96;
 }
-
 #pie {
 	z-index: 2;
 	position: fixed;
@@ -255,7 +215,6 @@ option {
 	font-size: 0.8em;
 	color: white;
 }
-
 #crono {
 	z-index: 5;
 	position: fixed;
@@ -272,20 +231,17 @@ option {
 	font-size: 3.5vw;
 	color: #229a65;
 }
-
 #crono img {
 	height: 100%;
 	max-height: 90%;
 	padding: 2%;
 	margin-right: 2%;
 }
-
 #cronoN {
 	position: absolute;
 	top: 18.5%;
 	right: 2%;
 }
-
 #nota {
 	z-index: 1;
 	display: none;
@@ -302,16 +258,13 @@ option {
 	border-width: 2px;
 	border-radius: 10px;
 }
-
 #tit {
 	padding: 0.5%;
 }
-
 .fa-check:before {
     content: "\f00c";
     color: mediumseagreen;
 }
-
 .fa-times:before {
     content: "\f00c";
     color: red;
