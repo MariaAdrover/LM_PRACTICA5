@@ -6,7 +6,7 @@ Repositorio creado para la práctica de formularios html, con lectura de datos d
 
 **VERSIÓN MINIMIFICADA** 
 
-> * Enlace al [Repositorio branch vMini](https://rawgit.com/MariaAdrover/LM_PRACTICA5/master/formulari.html)
+> * Enlace al [Repositorio branch vMini](https://github.com/MariaAdrover/LM_PRACTICA5/tree/vMini)
 > * Enlace a la página de [INSTRUCCIONES](https://rawgit.com/MariaAdrover/LM_PRACTICA5/vMini/index.html)
 > * Enlace a la página del [TEST](https://rawgit.com/MariaAdrover/LM_PRACTICA5/vMini/formulari.html)
 
