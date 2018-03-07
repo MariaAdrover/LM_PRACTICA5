@@ -427,8 +427,7 @@ function corregirCheckbox(p) {
 		darExplicacion("Respuesta/s correcta/s: "); 
 		for (h = 0; h < (window['ok' + p]).length; h++) {
 			var numero = parseInt(window['ok' + p][h]) + 1;
-			darExplicacion(numero + ". " + preguntaXML[p].getElementsByTagName("option")[(window['ok' + p][h])].innerHTML);	
-			// PREGUNTAR PROFE    *************************	   COMO ACCEDER AL innerHTML del LABEL	
+			darExplicacion(numero + ". " + preguntaXML[p].getElementsByTagName("option")[(window['ok' + p][h])].innerHTML);
 		}		
 	}	
 }
@@ -458,7 +457,7 @@ function corregirRadio(p) {
 				
 			} else {
 
-				nota = nota - (1/(che.length)); // RESPUESTA INCORRECTA quita 1 / el numero de opciones que haya
+				nota = nota - (1/(che.length)); 
 				var z = false;
 				ponerBold("P " + (p+1), z);
 				darExplicacion("INCORRECTA. Puntuación: -" + (1/(che.length)).toFixed(2));
@@ -471,7 +470,7 @@ function corregirRadio(p) {
 
 /* ********************* presentación de las respuestas y la nota ****************************** */
 
-function inicializar() { // ES necesario utilizarlo?*********************
+function inicializar() { 
     document.getElementById('resultadosDiv').innerHTML = "";
     nota = 0.0;
 }
