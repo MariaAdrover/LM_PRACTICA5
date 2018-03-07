@@ -18,6 +18,7 @@ body {
 	top:1%;
 	left:4%;
 	width: 6%;
+	max-height: 100%;
 }
 #img1 img {
 	width:100%;
@@ -30,6 +31,7 @@ body {
 	top:1%;
 	left:13%;
 	width: 6%;
+	max-height: 100%;
 }
 #img2 img {
 	width:100%;
@@ -42,6 +44,7 @@ body {
 	top:10.5%;
 	left:24%;
 	width:50%;
+	max-height: 100%;
 	padding: 0.8%;
 	text-align: center;
 	font-family: 'Ranchers', Arial, cursive;
@@ -147,7 +150,13 @@ fieldset, #info, #comentariosNota {
 input[type = 'text']{
 	width: 100%;	
 	font-family: 'Varela Round', Arial, sans-serif;
-	font-size: 1.2vw;
+	font-size: 1.2em;
+}
+.title {
+	font-size: 1.1em;
+}
+.tit {	
+	font-size: 1.14em;
 }
 input[type = 'checkbox']{  
 	margin-top: 2%;
@@ -160,14 +169,17 @@ select {
 	width: 100%;
 	overflow: auto;
 	background-color: white;
-	font-size: 1.2vw;
+	font-size: 1.2em;
 }
 #mult, #mult2 {	
     padding: 1% 1%;
 }
 option {
 	margin-bottom: 2%;
-	font-size: 1.2vw;
+	font-size: 1em;
+}
+label {
+	font-size: 1.2em;
 }
 #p3 img {
 	width: 16%;
@@ -188,15 +200,23 @@ option {
 	background-color: white;
 }
 #botonSubmit {
-        background-color: #229a65; /* Green */
+<<<<<<< HEAD
+    background-color: #229a65;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #229a65;
    	border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 	border-style: solid;
-        font-size: 16px;
+    font-size: 16px;
 	border-radius: 10px;
 	border-color: #333333;
 	border-width: 2px;
@@ -225,7 +245,7 @@ option {
 	background-color: white;
 	border-style: solid;
 	border-color: #333333;
-	border-top-color: white;
+	border-top-color: whitesmoke;
 	border-width: 5px;
 	border-radius: 10px;
 	font-size: 3.5vw;

@@ -1,10 +1,6 @@
 var xhttp = new XMLHttpRequest();
-
 var url = "https://rawgit.com/MariaAdrover/LM_PRACTICA5/master/xml/formulari.xml";
 var urlJavi = 'https://rawgit.com/shamshir/Prueba/master/questions.xml';
-var urlInstrucciones = 'file:///C:/Users/miaad/Desktop/LM_PRACTICA5/formulari.html';
-var urlTest = 'file:///C:/Users/miaad/Desktop/LM_PRACTICA5/formulari.html';
-
 var xmlDoc = null;
 var preguntaXML;
 var preguntaHTML;
@@ -53,11 +49,11 @@ window.onload = function(){
 	
 	// Avisos al pulsar en los enlaces de la barra de navegación
 	document.getElementById('instrucciones').onclick = function() {
-		return confirm('¿Seguro que quieres dejar el test?');
+		return confirm('¿Quieres dejar el test?');
 	}
 	
 	document.getElementById('test').onclick = function() {
-		return confirm('¿Seguro que quieres reiniciar el test?');
+		return confirm('¿Quieres reiniciar el test?');
 	}
 	
 	// Al enviar el formulario Comprobar, Corregir y mostrar la nota y las correcciones
@@ -73,15 +69,10 @@ window.onload = function(){
 	}
 }
 
-// ************************************************************************
-// **********************  Definición de funciones  ***********************
-// ************************************************************************
+/* **********************  Definición de funciones  *********************** */
 
-
-
-// ************* Recoger datos del XML ******************
-
-// ****************  preparar HTML **********************
+/* ************* Recoger datos del XML ****************** */
+/* ****************  preparar HTML ********************** */
 
 function gestionarXml(dadesXml){
 	var xmlDoc = dadesXml.responseXML;	
@@ -98,52 +89,44 @@ function gestionarXml(dadesXml){
 		numOpciones = preguntaXML[i].getElementsByTagName('option').length;
 		numRespuestas = preguntaXML[i].getElementsByTagName('answer').length;
 		
-		// Cuando la pregunta es un SELECT o SELECT MULTIPLE
+		/* SELECT o SELECT MULTIPLE */
 		if (xmlDoc.getElementsByTagName('type')[i].innerHTML == 'select' || xmlDoc.getElementsByTagName('type')[i].innerHTML == 'multiple'){						
-			var optionXML = [];
-			
+			var optionXML = [];			
 			optionXML = leerOptions (numOpciones, i);
 			llenarSelect (optionXML, i);
 		}
 		
-		// Cuando la pregunta es type CHECKBOX
+		/* CHECKBOX */
 		if (xmlDoc.getElementsByTagName('type')[i].innerHTML == 'checkbox') {			
-			var optionXML = [];
-			
+			var optionXML = [];			
 			optionXML = leerOptions (numOpciones, i);
 			llenarCheckbox (optionXML, i);
 		}
 		
+		/* CHECKBOX */
 		if (xmlDoc.getElementsByTagName('type')[i].innerHTML == 'radio') {
-			var optionXML = [];
-			
+			var optionXML = [];			
 			optionXML = leerOptions (numOpciones, i);
 			llenarRadio (optionXML, i);
 		}
 		
-		// Almacena las respuestas correctas para cada pregunta en el array: ok[posicionArrayPreguntas]
+		/* Almacena las respuestas correctas para cada pregunta en el array: ok[posicionArrayPreguntas] */
 		for (j = 0; j < numRespuestas; j++) {
-			window['ok' + i][j] = preguntaXML[i].getElementsByTagName('answer')[j].innerHTML;
-			
-		}
-		
+			window['ok' + i][j] = preguntaXML[i].getElementsByTagName('answer')[j].innerHTML;			
+		}		
 	}
-
 }
 
-// Devuelve un array con el contenido de las options del XML
+/* Devuelve un array con el contenido de las options del XML */
 function leerOptions (numOpciones, i) {
-	var optionXML = [];
-	
+	var optionXML = [];	
 	for (j=0; j<numOpciones; j++) { 
 		optionXML[j] =  preguntaXML[i].getElementsByTagName("option")[j].innerHTML;
-	}
-	
+	}	
 	return optionXML;	
 }
 
-
-// Crea los input CHECKBOX en el HTML con los datos del XML
+/* Crea los input CHECKBOX en el HTML con los datos del XML */
 function llenarCheckbox (optionXML, pos) {
 
 	for (i = 0; i < optionXML.length; i++) {
@@ -163,8 +146,7 @@ function llenarCheckbox (optionXML, pos) {
 	}	
 }
 
-
-// Crea los input RADIO en el HTML con los datos del XML
+/* Crea los input RADIO en el HTML con los datos del XML */
 function llenarRadio (optionXML, pos) {
 	
 	for (i = 0; i < optionXML.length; i++) {
@@ -185,25 +167,21 @@ function llenarRadio (optionXML, pos) {
 	
 }
 
-
-// Crea los elementos OPTION en SELECT y SELECT MULTIPLE del HTML con los datos del XML
+/* Crea los elementos OPTION en SELECT y SELECT MULTIPLE del HTML con los datos del XML */
 function llenarSelect (optionXML, pos) {
 	var select = preguntaHTML[pos].getElementsByTagName('select')[0];
 	
 	for (i = 0; i < optionXML.length; i++) {
 		var option = document.createElement("option");
-		option.text = optionXML[i];		
-		// option.innerHTML = optionXML[i]; Es lo mismo...
-		
+		option.text = optionXML[i];				
 		option.value = i + 1;
 		select.options.add(option);		
 	}
 }
 
+/* ********************* Empezar el TEST *********************************************** */
 
-// ********************* Empezar el TEST ******************************************************
-
-// Inicia la cuenta atrás
+/* Inicia la cuenta atrás */
 function actualizarCrono() {
 	var i;
 	
@@ -218,17 +196,16 @@ function actualizarCrono() {
 		min--;
 		seg = 59;
 		document.getElementById('cronoN').innerHTML = min + ':' + seg;		
-	} else if  (min == 0 && seg == 0) { // Si se acaba el tiempo, acaba el examen
+	} else if  (min == 0 && seg == 0) { /* Si se acaba el tiempo, acaba el examen */
 		clearInterval(crono);
 		alert("Lo sentimos, se acabó el tiempo, ¡has sido muy lent@!");
 		presentarNota();
 	}
 }
 
+/* *********************** ON SUBMIT *************************************************** */
 
-// *********************** ON SUBMIT **********************************************************
-
-// Comprobar que se han contestado todas las preguntas
+/* Comprobar que se han contestado todas las preguntas */
 function comprobar() {
 	var i;
 	var j;
@@ -237,88 +214,71 @@ function comprobar() {
    
 	for (i = 0; i < preguntaHTML.length; i++) {
 		
-		if (i==0 || i==1) { // Comprueba text
-			
+		if (i==0 || i==1) { /* Comprueba text */			
 			if (preguntaHTML[i].getElementsByTagName('input')[0].value == "") {
 				alert("Has de contestar todas las preguntas. Por favor, contesta la pregunta " + (i+1));
 				preguntaHTML[i].getElementsByTagName('input')[0].focus();
 				
 				return false;
-			}
-			
-		} else if (i==2 || i==3) {  // Comprueba select
+			}			
+		} else if (i==2 || i==3) {  /* Comprueba select */
 			if (preguntaHTML[i].getElementsByTagName('select')[0].selectedIndex == 0) {
 				alert("Has de contestar todas las preguntas. Por favor, contesta la pregunta " + (i+1));
 				preguntaHTML[i].getElementsByTagName('select')[0].focus();
 				
 				return false;
-			}
-			
-		} else if (i==4 || i==5) {  // Comprueba multiple
+			}			
+		} else if (i==4 || i==5) {  /* Comprueba multiple */
 			contestado = false;
-			var sel = preguntaHTML[i].getElementsByTagName('select')[0]; 
-			
+			var sel = preguntaHTML[i].getElementsByTagName('select')[0];			
 			for (j = 0; j < sel.length; j++) {
 				if (sel.options[j].selected) {
 					contestado = true;
 				}
 			}
-
 			if (!contestado) {
 				alert("Has de contestar todas las preguntas. Por favor, contesta la pregunta " + (i+1));
 				sel.focus();
 				
 				return false;				
-			}
-			
-		} else if (i==6 || i==7) {  // Comprueba checkbox
+			}			
+		} else if (i==6 || i==7) {  /* Comprueba checkbox */
 			contestado = false;
-			var che = preguntaHTML[i].getElementsByTagName('input'); 
-			
+			var che = preguntaHTML[i].getElementsByTagName('input');			
 			for (j = 0; j < che.length; j++) {
 				if (che[j].checked) {
 					contestado = true;
 				}
 			}
-
 			if (!contestado) {
 				alert("Has de contestar todas las preguntas. Por favor, contesta la pregunta " + (i+1));
 				che[0].focus();
 				
 				return false;				
-			}		
-			
-		} else {  // Comprueba radio
+			}					
+		} else {  /* Comprueba radio */
 			contestado = false;
-			var che = preguntaHTML[i].getElementsByTagName('input');
-			
+			var che = preguntaHTML[i].getElementsByTagName('input');			
 			for (j = 0; j < che.length; j++) {
 				if (che[j].checked) {
 					contestado = true;
 				}
-			}
-			
+			}			
 			if (!contestado) {
 				alert("Has de contestar todas las preguntas. Por favor, contesta la pregunta " + (i+1));
 				che[0].focus();
 				
 				return false;				
-			}
-			
-		}
-		
+			}			
+		}		
 	}
 	
 	return true;
 }
 
-// *************************************************************************************************************
+/* ******************************************************************************************** */
 
-// Corregir las preguntas
-// Cada función corrige un tipo de pregunta y pone en la hoja de resultados:
-// 1. Si la respuesta es CORRECTA o INCORRECTA
-// 2. La puntuación conseguida en cada pregunta
-// 3. Las respuestas correctas en el caso de que las respuestas seleccionadas no fueran correctas
+/* Corregir las preguntas */
 
 function corregir() {
 	
@@ -338,8 +298,7 @@ function corregir() {
 	}	
 }
 
-// Respuesta correcta:
-// Respuesta incorrecta:
+/* TEXT Respuesta correcta: +1 _ Respuesta incorrecta: -0.2*/
 function corregirText(i) {
 	var valor = preguntaHTML[i].getElementsByTagName('input')[0].value;
 	
@@ -349,7 +308,7 @@ function corregirText(i) {
 		ponerBold("P " + (i+1), z);
 		darExplicacion("CORRECTA. Puntuación: 1");
 	} else {
-		nota = nota - 0.2; // Quita 0.2 si contestas mal
+		nota = nota - 0.2;
 		var z = false;
 		ponerBold("P " + (i+1), z);		
 		darExplicacion("INCORRECTA. Puntuación: -0.2");
@@ -357,8 +316,7 @@ function corregirText(i) {
 	}	
 }
 
-// Respuesta correcta:
-// Respuesta incorrecta:
+/* SELECT Respuesta correcta: +1 _ Respuesta incorrecta: -1/numero de opciones */
 function corregirSelect(i) {
     var select = preguntaHTML[i].getElementsByTagName('select')[0];
 	var puntosMal = -(1/(select.options.length-1).toFixed(2));
@@ -369,7 +327,7 @@ function corregirSelect(i) {
 		ponerBold("P " + (i+1), z);
 		darExplicacion("CORRECTA. Puntuación: 1");
     } else {
-		nota += puntosMal // RESPUESTA INCORRECTA quita 1/numero de opciones que haya
+		nota += puntosMal
 		var z = false;
 		ponerBold("P " + (i+1), z);
 		darExplicacion("INCORRECTA. Puntuación: " + puntosMal.toFixed(2));
@@ -377,8 +335,7 @@ function corregirSelect(i) {
 	}	    
 }
 
-// Respuesta correcta:
-// Respuesta incorrecta:
+/* MULTIPLE Respuesta correcta: +1/numeroOpcionesCorrectas _ Respuesta incorrecta: -1/numOpciones */
 function corregirMultiple(p) {
 	var sel = preguntaHTML[p].getElementsByTagName('select')[0]; 
 	var puntosBien =  1/((window['ok' + p]).length);
@@ -402,7 +359,7 @@ function corregirMultiple(p) {
 			}
 			
 			if (mal) {
-				nota = nota - (1/sel.length); // RESPUESTA INCORRECTA quita 1/numero de opciones
+				nota = nota - (1/sel.length);
 				puntuacion -= (1/sel.length);
 			}
 		}
@@ -424,8 +381,7 @@ function corregirMultiple(p) {
 	}
 }
 
-// Respuesta correcta:
-// Respuesta incorrecta:
+/* CHECKBOX Respuesta correcta: +1/numeroOpcionesCorrectas _ Respuesta incorrecta: -1/numOpciones */
 function corregirCheckbox(p) {
 	var che;
 	var puntosBien =  1/((window['ok' + p]).length);
@@ -477,8 +433,7 @@ function corregirCheckbox(p) {
 	}	
 }
 
-// Respuesta correcta:
-// Respuesta incorrecta:
+/* RADIO Respuesta correcta: +1 _ Respuesta incorrecta: -1/numero de opciones */
 function corregirRadio(p) {
 	var che;
 	var numero = parseInt(window['ok' + p][0]);
@@ -514,15 +469,14 @@ function corregirRadio(p) {
 }
 
 
-// *******************************************************************************************
-// Gestionar la presentación de las respuestas y la nota *************************************
+/* ********************* presentación de las respuestas y la nota ****************************** */
 
 function inicializar() { // ES necesario utilizarlo?*********************
     document.getElementById('resultadosDiv').innerHTML = "";
     nota = 0.0;
 }
 
-// Creo el texto con <h3>
+/* Creo el texto con <h3> de la pregunta */
 function ponerH(r) {
 	var p = document.createElement("h3");
 	var node = document.createTextNode(r);
@@ -531,7 +485,7 @@ function ponerH(r) {
 	document.getElementById('comentariosNota').appendChild(p);	
 }
 
-// Creo el texto con <b>
+/* Creo el texto con <b> y awakesome icons para indicar respuesta correcta o incorrecta */
 function ponerBold(r, z) {
 	var p = document.createElement("b");
 	var node = document.createTextNode(r);
@@ -547,7 +501,7 @@ function ponerBold(r, z) {
 	document.getElementById('comentariosNota').appendChild(i);	
 }
 
-// Creo el texto con <p>
+/* Creo el texto con <p> con comentarios */
 function darExplicacion(r){
 	var p = document.createElement("p");
 	var node = document.createTextNode(r);
@@ -557,14 +511,13 @@ function darExplicacion(r){
 
 }
 
-// Mostrar las repuestas, puntuaciones de cada pregunta y la nota final
+/* Mostrar las repuestas, puntuaciones de cada pregunta y la nota final */
 function presentarNota() {
 	formElement.style.display = 'none';
 	
 	if (nota < 0) {			
 		notaReal = nota;
 		nota = 0;
-		ponerH
 		ponerH('NOTA FINAL: ' + nota + " sobre 10");		
 		darExplicacion('... aunque la hemos redondeado ¡porque era negativa!');
 		ponerH("Tu nota REAL es " + notaReal.toFixed(2) + " sobre 10");
