@@ -304,13 +304,11 @@ function corregirText(i) {
 	
 	if (valor.toUpperCase() == (window['ok' + i][0].toUpperCase())) {
 		nota++;
-		var z = true;
-		ponerBold("P " + (i+1), z);
+		ponerBold("P " + (i+1));
 		darExplicacion("CORRECTA. Puntuación: 1");
 	} else {
 		nota = nota - 0.2;
-		var z = false;
-		ponerBold("P " + (i+1), z);		
+		ponerBold("P " + (i+1));		
 		darExplicacion("INCORRECTA. Puntuación: -0.2");
 		darExplicacion("Respuesta correcta: " + window['ok' + i][0]);
 	}	
@@ -323,13 +321,11 @@ function corregirSelect(i) {
 	
     if ((select.selectedIndex)==(window['ok' + i][0])) {
         nota +=1;
-		var z = true;
-		ponerBold("P " + (i+1), z);
+		ponerBold("P " + (i+1));
 		darExplicacion("CORRECTA. Puntuación: 1");
     } else {
 		nota += puntosMal
-		var z = false;
-		ponerBold("P " + (i+1), z);
+		ponerBold("P " + (i+1));
 		darExplicacion("INCORRECTA. Puntuación: " + puntosMal.toFixed(2));
 		darExplicacion("Respuesta correcta: " + (window['ok' + i][0]) + ". " + select[(window['ok' + i][0])].innerHTML);
 	}	    
@@ -366,12 +362,10 @@ function corregirMultiple(p) {
 	}
 
 	if (puntuacion == 1) {
-		var z = true;
-		ponerBold("P " + (p+1), z);
+		ponerBold("P " + (p+1));
 		darExplicacion("CORRECTA. Puntuación: 1");
 	} else {
-		var z = false;
-		ponerBold("P " + (p+1), z);
+		ponerBold("P " + (p+1));
 		darExplicacion("INCORRECTA. Puntuación: " + puntuacion.toFixed(2));
 		darExplicacion("Respuesta/s correcta/s: "); 
 		for (h = 0; h < (window['ok' + p]).length; h++) {
@@ -410,25 +404,22 @@ function corregirCheckbox(p) {
 			}
 			
 			if (mal) {
-				nota = nota - (1/che.length); // RESPUESTA INCORRECTA quita 1/numero de opciones
+				nota = nota - (1/che.length);
 				puntuacion -= (1/che.length);
 			}
 		}
 	}
 
 	if (puntuacion == 1) {
-		var z = true;
-		ponerBold("P " + (p+1), z);
+		ponerBold("P " + (p+1));
 		darExplicacion("CORRECTA. Puntuación: 1");
-	} else {
-		var z = false;		
-		ponerBold("P " + (p+1), z);
+	} else {	
+		ponerBold("P " + (p+1));
 		darExplicacion("INCORRECTA. Puntuación: " + puntuacion.toFixed(2));
 		darExplicacion("Respuesta/s correcta/s: "); 
 		for (h = 0; h < (window['ok' + p]).length; h++) {
 			var numero = parseInt(window['ok' + p][h]) + 1;
 			darExplicacion(numero + ". " + preguntaXML[p].getElementsByTagName("option")[(window['ok' + p][h])].innerHTML);	
-			// PREGUNTAR PROFE    *************************	   COMO ACCEDER AL innerHTML del LABEL	
 		}		
 	}	
 }
@@ -452,15 +443,13 @@ function corregirRadio(p) {
 				
 			if (i == numero) {
 				nota += 1;
-				var z = true;
-				ponerBold("P " + (p+1), z);
+				ponerBold("P " + (p+1));
 				darExplicacion("CORRECTA. Puntuación: 1");
 				
 			} else {
 
-				nota = nota - (1/(che.length)); // RESPUESTA INCORRECTA quita 1 / el numero de opciones que haya
-				var z = false;
-				ponerBold("P " + (p+1), z);
+				nota = nota - (1/(che.length)); 
+				ponerBold("P " + (p+1));
 				darExplicacion("INCORRECTA. Puntuación: -" + (1/(che.length)).toFixed(2));
 				darExplicacion("Respuesta correcta: " + (numero + 1) + ". " + preguntaXML[p].getElementsByTagName("option")[numero].innerHTML);
 			}
@@ -470,11 +459,6 @@ function corregirRadio(p) {
 
 
 /* ********************* presentación de las respuestas y la nota ****************************** */
-
-function inicializar() { // ES necesario utilizarlo?*********************
-    document.getElementById('resultadosDiv').innerHTML = "";
-    nota = 0.0;
-}
 
 /* Creo el texto con <h3> de la pregunta */
 function ponerH(r) {
@@ -486,19 +470,12 @@ function ponerH(r) {
 }
 
 /* Creo el texto con <b> y awakesome icons para indicar respuesta correcta o incorrecta */
-function ponerBold(r, z) {
+function ponerBold(r) {
 	var p = document.createElement("b");
 	var node = document.createTextNode(r);
-	var i = document.createElement("i");
-	if(z) {
-		i.className = "fas fa-check";
-	} else {
-		i.className = "fas fa-times";
-	}
 
 	p.appendChild(node);
-	document.getElementById('comentariosNota').appendChild(p);	
-	document.getElementById('comentariosNota').appendChild(i);	
+	document.getElementById('comentariosNota').appendChild(p);
 }
 
 /* Creo el texto con <p> con comentarios */

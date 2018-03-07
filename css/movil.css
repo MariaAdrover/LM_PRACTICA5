@@ -249,15 +249,3 @@ option {
 	border-width: 2px;
 	border-radius: 10px;
 }
-
-.fa-check:before {
-    content: "\f00c"; /*Revisar si puedo quitarlo y si puedo quitar :before */
-    color: mediumseagreen;
-}
-.fa-times:before {
-    content: "\f00c";
-    color: red;
-}
-input, select, label {    
-    font-size: 5vw;
-}

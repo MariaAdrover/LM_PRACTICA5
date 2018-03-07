@@ -280,11 +280,3 @@ label {
 #tit {
 	padding: 0.5%;
 }
-.fa-check:before {
-    content: "\f00c";
-    color: mediumseagreen;
-}
-.fa-times:before {
-    content: "\f00c";
-    color: red;
-}
