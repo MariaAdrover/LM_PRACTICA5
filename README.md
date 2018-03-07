@@ -36,6 +36,10 @@ Una vez corregido el test se nos informará de:
 * La nota final.
 Si la nota final fuera negativa se redondeará a 0, pero también se nos informará de cual es la nota real.
 
-
+### VERSIÓN 1.3
+El código de la versión original es validado sin errores con W3C pero en la validación del CSS, aunque indica que es correcta me salen unos warnings debido a la utilización de los iconos de Awakesome icons en el informe final del formulario. He añadido esta tercera versión en la que no utilizo estos iconos.
+> * Enlace al [Repositorio branch v1.3](https://github.com/MariaAdrover/LM_PRACTICA5/tree/v1.3)
+> * Enlace a la página de [INSTRUCCIONES](https://rawgit.com/MariaAdrover/LM_PRACTICA5/v1.3/index.html)
+> * Enlace a la página del [TEST](https://rawgit.com/MariaAdrover/LM_PRACTICA5/v1.3/formulari.html)
 
 
