@@ -13,7 +13,7 @@ Repositorio creado para la práctica de formularios html, con lectura de datos d
 ## DESCRIPCIÓN
 El repositorio contiene dos ficheros html, uno con una breve presentación de la página e instrucciones para realizar el test (**index.html**), y otro con el código del formulario (**formulario.html**).
 #### Open Graph Protocol
-La página que he preparado para compartir en facebook es la de las [instrucciones](https://rawgit.com/MariaAdrover/LM_PRACTICA5/master/index.html).
+Los enlaces que se pueden compartir en facebook son la página de [instrucciones](https://rawgit.com/MariaAdrover/LM_PRACTICA5/master/index.html) y la del [test](https://rawgit.com/MariaAdrover/LM_PRACTICA5/master/formulari.html).
 #### CRONÓMETRO
 Hay un tiempo máximo para responder todas las preguntas del test (3 minutos). Pasado este tiempo ya no se podrá corregir el test y se obtendrá automáticamente un 0 como nota final.
 #### COMPROBACIÓN ANTES DE CORREGIR
